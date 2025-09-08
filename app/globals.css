@@ -1,0 +1,442 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'ProtestRevolution';
+  src: url('/fonts/ProtestRevolution-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-protest{
+  font-family: 'ProtestRevolution', sans-serif;
+}
+
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --revolutionary-gold: #fbbf24;
+  --ember-red: #dc2626;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #000000;
+  --nepal-crimson: #dc143c;
+  --nepal-blue: #003893;
+  --himalayan-white: #f8fafc;
+  --prayer-flag-gold: #ffd700;
+  --peaceful-saffron: #ff9933;
+  --temple-stone: #6b7280;
+  --nepal-flag-crimson: #dc143c;
+  --nepal-flag-blue: #003893;
+  --youth-energy: #ff6b35;
+  --digital-freedom: #00d4ff;
+  --enough-red: #e53e3e;
+  --unity-gold: #ffd700;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-montserrat: var(--font-montserrat);
+  --font-inter: var(--font-inter);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations and revolutionary styling */
+@keyframes gentle-wave {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes prayer-flag-flutter {
+
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes nepal-flag-wave {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+    filter: hue-rotate(10deg);
+  }
+
+  75% {
+    transform: translateY(-4px) rotate(-1deg);
+    filter: hue-rotate(-10deg);
+  }
+}
+
+@keyframes enough-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    color: var(--enough-red);
+    text-shadow: 0 0 10px rgba(229, 62, 62, 0.5);
+  }
+
+  50% {
+    transform: scale(1.05);
+    color: var(--nepal-flag-crimson);
+    text-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+  }
+}
+
+@keyframes flag-triangle-float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+
+  66% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.gentle-wave-effect {
+  animation: gentle-wave 3s ease-in-out infinite;
+}
+
+.prayer-flag-flutter {
+  animation: prayer-flag-flutter 4s ease-in-out infinite;
+}
+
+.matrix-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.matrix-char {
+  position: absolute;
+  color: var(--nepal-crimson);
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  animation: matrix-rain 8s linear infinite;
+  opacity: 0.2;
+}
+
+.straw-hat-flag {
+  position: relative;
+  display: inline-block;
+}
+
+.straw-hat-flag::before {
+  content: "🏴‍☠️";
+  font-size: 1.2em;
+  margin-right: 0.5rem;
+}
+
+.constitutional-highlight {
+  background: linear-gradient(135deg, var(--nepal-crimson) 0%, var(--nepal-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+.peaceful-resistance {
+  border-left: 4px solid var(--nepal-crimson);
+  padding-left: 1rem;
+  background: rgba(220, 20, 60, 0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.nepal-flag-wave {
+  animation: nepal-flag-wave 4s ease-in-out infinite;
+}
+
+.enough-pulse {
+  animation: enough-pulse 2s ease-in-out infinite;
+}
+
+.flag-triangle-float {
+  animation: flag-triangle-float 3s ease-in-out infinite;
+}
+
+.nepal-flag-gradient {
+  background: linear-gradient(135deg, var(--nepal-flag-crimson) 0%, var(--nepal-flag-blue) 100%);
+}
+
+.youth-energy-gradient {
+  background: linear-gradient(45deg, var(--youth-energy) 0%, var(--digital-freedom) 50%, var(--unity-gold) 100%);
+}
+
+.enough-highlight {
+  background: linear-gradient(90deg, var(--enough-red) 0%, var(--nepal-flag-crimson) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Added mega highlight for #EnoughIsEnough visibility */
+.enough-highlight-mega {
+  position: relative;
+  display: inline-block;
+}
+
+.enough-highlight-mega::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  right: -20px;
+  bottom: -10px;
+  background: linear-gradient(45deg, var(--nepal-flag-crimson), var(--unity-gold), var(--nepal-flag-blue));
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.3;
+  animation: enough-pulse 3s ease-in-out infinite;
+}
+
+/* Added Nepal identity styling */
+.nepal-identity {
+  position: relative;
+  overflow: hidden;
+}
+
+.nepal-identity::before {
+  content: "🇳🇵";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 4rem;
+  opacity: 0.1;
+  animation: nepal-flag-wave 6s ease-in-out infinite;
+}
+
+/* Added social media platform logo styles */
+.social-platform-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+.social-platform-logo:hover {
+  transform: scale(1.1);
+}
+
+.facebook-logo {
+  background: #1877f2;
+}
+
+.instagram-logo {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.twitter-logo {
+  background: #ffffff;
+}
+
+.youtube-logo {
+  background: #ff0000;
+}
+
+.whatsapp-logo {
+  background: #25d366;
+}
+
+.tiktok-logo {
+  background: linear-gradient(45deg, #ff0050, #00f2ea);
+}
+
+.linkedin-logo {
+  background: #0077b5;
+}
+
+.snapchat-logo {
+  background: #fffc00;
+}
+
+.telegram-logo {
+  background: #0088cc;
+}
+
+.discord-logo {
+  background: #5865f2;
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
