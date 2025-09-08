@@ -133,7 +133,7 @@ export default function AboutPage() {
           </div>
 
           {/* Timeline */}
-          <div className="mb-20">
+          {/* <div className="mb-20">
             <div className="bg-black/60 backdrop-blur-sm border border-gray-600/20 rounded-2xl p-8">
               <h2 className="text-4xl font-bold text-white mb-8 font-protest">Timeline of Digital Censorship</h2>
               <div className="space-y-6">
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Call to Action */}
           <div className="text-center">

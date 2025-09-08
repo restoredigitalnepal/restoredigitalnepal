@@ -1,3 +1,4 @@
+import Image from "next/image"
 export default function Footer() {
   return (
     <footer className="bg-black/95 backdrop-blur-md border-t border-red-600/30 py-12">
@@ -6,8 +7,15 @@ export default function Footer() {
           {/* Logo and Mission */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center border-2 border-red-500">
-                <span className="text-white font-bold text-sm">🇳🇵</span>
+              <div className="w-10 h-10 overflow-hidden rounded-full border-2 border-red-500">
+                <Image
+                  src="/images/revolution.png"
+                  alt="Restore Digital Nepal"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 object-cover"
+                  loading="lazy"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-protest text-white text-lg tracking-wide">

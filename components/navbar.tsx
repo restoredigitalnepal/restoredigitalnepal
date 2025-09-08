@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -11,10 +12,17 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-md shadow-lg border-b border-red-600/30 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - Improved */}
+          {/* Logo */}
           <a href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center border-2 border-red-500 group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-sm">🇳🇵</span>
+            <div className="w-10 h-10 overflow-hidden rounded-full border-2 border-red-500 group-hover:scale-110 transition-transform duration-300">
+              <Image
+                src="/images/revolution.png"
+                alt="Restore Digital Nepal"
+                width={40}
+                height={40}
+                className="w-10 h-10 object-cover"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-protest text-white text-lg tracking-wide">

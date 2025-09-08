@@ -39,11 +39,20 @@ export default function HeroSection() {
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
           <div className={`transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
 
-            {/* Flag Badge - Clean Design */}
-            <div className="inline-flex items-center gap-3 bg-black/60 backdrop-blur-sm border border-red-600/30 rounded-full px-8 py-4 mb-12">
-              <span className="text-3xl">🇳🇵</span>
-              <span className="text-white font-semibold text-lg">For Nepal's Digital Freedom</span>
-              <span className="text-3xl">🇳🇵</span>
+            {/* Emblem Badge - Logo focused */}
+            <div className="inline-flex items-center gap-4 bg-black/60 backdrop-blur-sm border border-red-600/30 rounded-full px-6 py-3 mb-12">
+              <span className="block h-px w-10 bg-red-500/60" />
+              <div className="w-14 h-14 overflow-hidden rounded-full ring-2 ring-red-500/60 shadow-md">
+                <Image
+                  src="/images/revolution.png"
+                  alt="Restore Digital Nepal"
+                  width={56}
+                  height={56}
+                  className="w-14 h-14 object-cover"
+                  priority
+                />
+              </div>
+              <span className="block h-px w-10 bg-red-500/60" />
             </div>
 
             {/* Main Headline - Bold and Clean with Custom Font */}

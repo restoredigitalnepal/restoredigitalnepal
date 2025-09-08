@@ -26,26 +26,23 @@ const skillAreas = [
 ]
 
 const skillOptions = [
-  { value: "tech-development", label: "Tech & Development" },
+  { value: "tech and development", label: "Tech & Development" },
   { value: "social-media", label: "Social Media" },
-  { value: "writing-media", label: "Writing & Media" },
+  { value: "writing and media", label: "Writing & Media" },
   { value: "creative-arts", label: "Creative Arts" },
   { value: "legal-policy", label: "Legal & Policy" },
   { value: "advocacy", label: "Advocacy" },
-  { value: "marketing", label: "Marketing & PR" },
-  { value: "project-management", label: "Project Management" },
-  { value: "research", label: "Research & Analysis" },
-  { value: "translation", label: "Translation" },
   { value: "other", label: "Other" }
 ]
 
 export default function JoinTeamSection() {
   const { user, signInWithGoogle } = useAuth()
   const [formData, setFormData] = useState({
+    name: '',
     skills: '',
     phone_number: '',
-    handle: '',
-    motivation: ''
+    discord_tag: '',
+    message: ''
   })
   const [showDiscordModal, setShowDiscordModal] = useState(false)
   const [turnstileToken, setTurnstileToken] = useState('')
@@ -85,7 +82,7 @@ export default function JoinTeamSection() {
       return
     }
 
-    if (!formData.skills.trim() || !formData.phone_number.trim() || !formData.motivation.trim()) {
+    if (!formData.skills.trim() || !formData.phone_number.trim() || !formData.message.trim()) {
       setSubmitMessage('Please fill in all required fields')
       return
     }
@@ -109,8 +106,8 @@ export default function JoinTeamSection() {
           {
             skills: formData.skills.trim(),
             phone_number: formData.phone_number.trim(),
-            handle: formData.handle.trim() || null,
-            motivation: formData.motivation.trim(),
+            discord_tag: formData.discord_tag.trim() || null,
+            message: formData.message.trim(),
             user_id: user.id,
           }
         ])
@@ -127,7 +124,7 @@ export default function JoinTeamSection() {
       }
 
       setSubmitMessage('Welcome to the movement! Your application has been submitted successfully.')
-      setFormData({ skills: '', phone_number: '', handle: '', motivation: '' })
+      setFormData({ name: '', skills: '', phone_number: '', discord_tag: '', message: '' })
       setTurnstileToken('')
       setShowDiscordModal(true)
 
@@ -203,7 +200,7 @@ export default function JoinTeamSection() {
                   </div>
                   <Button
                     onClick={signInWithGoogle}
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl px-10 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                    className="!bg-blue-700 hover:!bg-blue-800 !text-white font-bold text-xl px-10 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                   >
                     <span className="flex items-center gap-3">
                       <svg className="w-6 h-6" viewBox="0 0 24 24">
@@ -247,6 +244,20 @@ export default function JoinTeamSection() {
                       </select>
                     </div>
 
+
+                    <div>
+                      <label htmlFor="handle" className="block text-white font-semibold text-lg mb-3">Full Name *</label>
+                      <Input
+                        id="handle"
+                        name="handle"
+                        value={formData.discord_tag}
+                        onChange={handleInputChange}
+                        className="bg-black/40 border-white/20 text-white placeholder-gray-400 text-lg py-4 px-4 rounded-xl focus:border-blue-400 transition-colors duration-300"
+                        placeholder="Enter your Full Name"
+                        required
+                      />
+                    </div>
+
                     <div>
                       <label htmlFor="phone_number" className="block text-white font-semibold text-lg mb-3">Phone Number *</label>
                       <Input
@@ -261,14 +272,15 @@ export default function JoinTeamSection() {
                     </div>
 
                     <div>
-                      <label htmlFor="handle" className="block text-white font-semibold text-lg mb-3">Social Media Handle (Optional)</label>
+                      <label htmlFor="handle" className="block text-white font-semibold text-lg mb-3">Discord Handle *</label>
                       <Input
                         id="handle"
                         name="handle"
-                        value={formData.handle}
+                        value={formData.discord_tag}
                         onChange={handleInputChange}
                         className="bg-black/40 border-white/20 text-white placeholder-gray-400 text-lg py-4 px-4 rounded-xl focus:border-blue-400 transition-colors duration-300"
                         placeholder="@yourhandle or your social media profile"
+                        required
                       />
                     </div>
 
@@ -277,7 +289,7 @@ export default function JoinTeamSection() {
                       <Textarea
                         id="motivation"
                         name="motivation"
-                        value={formData.motivation}
+                        value={formData.message}
                         onChange={handleInputChange}
                         className="bg-black/40 border-white/20 text-white placeholder-gray-400 text-lg p-4 rounded-xl min-h-[120px] resize-none focus:border-blue-400 transition-colors duration-300"
                         placeholder="What motivates you to fight for digital freedom in Nepal?"
@@ -409,7 +421,7 @@ export default function JoinTeamSection() {
                 <div className="space-y-3">
                   <Button
                     onClick={() => {
-                      window.open('https://discord.gg/restore-digital-nepal', '_blank')
+                      window.open('https://discord.gg/9nWHTZkebx', '_blank')
                       setShowDiscordModal(false)
                     }}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
