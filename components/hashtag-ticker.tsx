@@ -17,9 +17,9 @@ export default function HashtagTicker() {
   ]
 
   return (
-    <div className="bg-black py-4 overflow-hidden border-y border-gray-700 relative">
+    <div className="bg-black py-4 overflow-hidden border-y border-gray-700 relative mt-8">
       <div className="animate-scroll whitespace-nowrap relative z-10">
-        <span className="inline-flex items-center space-x-8 text-white font-montserrat font-semibold text-lg">
+        <span className="inline-flex items-center space-x-8 text-white font-protest font-bold text-xl">
           {hashtags.concat(hashtags).map((tag, index) => (
             <span key={`${tag}-${index}`} className="mx-8 hover:text-red-400 transition-colors">
               {tag}

@@ -25,7 +25,7 @@ export default function HomePage() {
           <Navbar />
           <HeroSection />
           <HashtagTicker />
-          <MovementStats />
+          {/* <MovementStats /> */}
           <PetitionSection />
           <JoinTeamSection />
           <CommunitySection />
