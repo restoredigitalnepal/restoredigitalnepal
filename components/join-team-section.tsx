@@ -156,6 +156,10 @@ export default function JoinTeamSection() {
     window.open(`https://wa.me/?text=${text}`, '_blank')
   }
 
+  const joinFacebookGroup = () => {
+    window.open('https://www.facebook.com/share/g/17142z98f8/', '_blank')
+  }
+
   return (
     <section id="join-team" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
       <div className="max-w-7xl mx-auto">
@@ -199,7 +203,7 @@ export default function JoinTeamSection() {
                     <p className="text-gray-300 text-lg mb-8">Sign in with Google to join our team and protect against spam</p>
                   </div>
                   <Button
-                    onClick={signInWithGoogle}
+                    onClick={() => signInWithGoogle('join-team')}
                     className="!bg-blue-700 hover:!bg-blue-800 !text-white font-bold text-xl px-10 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                   >
                     <span className="flex items-center gap-3">
@@ -246,11 +250,11 @@ export default function JoinTeamSection() {
 
 
                     <div>
-                      <label htmlFor="handle" className="block text-white font-semibold text-lg mb-3">Full Name *</label>
+                      <label htmlFor="name" className="block text-white font-semibold text-lg mb-3">Full Name *</label>
                       <Input
-                        id="handle"
-                        name="handle"
-                        value={formData.discord_tag}
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleInputChange}
                         className="bg-black/40 border-white/20 text-white placeholder-gray-400 text-lg py-4 px-4 rounded-xl focus:border-blue-400 transition-colors duration-300"
                         placeholder="Enter your Full Name"
@@ -272,10 +276,10 @@ export default function JoinTeamSection() {
                     </div>
 
                     <div>
-                      <label htmlFor="handle" className="block text-white font-semibold text-lg mb-3">Discord Handle *</label>
+                      <label htmlFor="discord_tag" className="block text-white font-semibold text-lg mb-3">Discord Handle *</label>
                       <Input
-                        id="handle"
-                        name="handle"
+                        id="discord_tag"
+                        name="discord_tag"
                         value={formData.discord_tag}
                         onChange={handleInputChange}
                         className="bg-black/40 border-white/20 text-white placeholder-gray-400 text-lg py-4 px-4 rounded-xl focus:border-blue-400 transition-colors duration-300"
@@ -285,10 +289,10 @@ export default function JoinTeamSection() {
                     </div>
 
                     <div>
-                      <label htmlFor="motivation" className="block text-white font-semibold text-lg mb-3">Why Join This Movement? *</label>
+                      <label htmlFor="message" className="block text-white font-semibold text-lg mb-3">Why Join This Movement? *</label>
                       <Textarea
-                        id="motivation"
-                        name="motivation"
+                        id="message"
+                        name="message"
                         value={formData.message}
                         onChange={handleInputChange}
                         className="bg-black/40 border-white/20 text-white placeholder-gray-400 text-lg p-4 rounded-xl min-h-[120px] resize-none focus:border-blue-400 transition-colors duration-300"
@@ -391,6 +395,15 @@ export default function JoinTeamSection() {
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                   </svg>
                   Share
+                </Button>
+                <Button
+                  onClick={joinFacebookGroup}
+                  className="bg-blue-800 hover:bg-blue-900 text-white rounded-xl px-4 py-2 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  </svg>
+                  Join Group
                 </Button>
                 <Button
                   onClick={shareOnWhatsApp}

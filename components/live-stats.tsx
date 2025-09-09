@@ -81,13 +81,13 @@ export default function LiveStats() {
   if (loading) {
     return (
       <div className="flex flex-col items-center space-y-3 mb-4">
-        <div className="inline-flex items-center justify-center rounded-full bg-black/60 border border-red-400/30 px-3 py-1">
+        <div className="inline-flex items-center justify-center rounded-full bg-black/60 px-3 py-1">
           <span className="text-white font-protest font-bold mr-2 inline-block text-center min-w-[4ch] tracking-wide">
             ...
           </span>
           <span className="text-red-200 text-xs">people joined the revolution</span>
         </div>
-        <div className="inline-flex items-center justify-center rounded-full bg-black/60 border border-red-400/30 px-3 py-1">
+        <div className="inline-flex items-center justify-center rounded-full bg-black/60 px-3 py-1">
           <span className="text-white font-protest font-bold mr-2 inline-block text-center min-w-[4ch] tracking-wide">
             ...
           </span>
@@ -103,13 +103,13 @@ export default function LiveStats() {
 
   return (
     <div className="flex flex-col items-center space-y-3 mb-4">
-      <div className="inline-flex items-center justify-center rounded-full bg-black/60 border border-red-400/30 px-3 py-1">
+      <div className="inline-flex items-center justify-center rounded-full bg-black/60 px-3 py-1">
         <span className="text-white font-protest font-bold mr-2 inline-block text-center min-w-[4ch] tracking-wide">
           {formatNumber(displayPetitionCount)}+
         </span>
         <span className="text-red-200 text-xs">people joined the revolution</span>
       </div>
-      <div className="inline-flex items-center justify-center rounded-full bg-black/60 border border-red-400/30 px-3 py-1">
+      <div className="inline-flex items-center justify-center rounded-full bg-black/60 px-3 py-1">
         <span className="text-white font-protest font-bold mr-2 inline-block text-center min-w-[4ch] tracking-wide">
           {formatNumber(displayTeamCount)}+
         </span>

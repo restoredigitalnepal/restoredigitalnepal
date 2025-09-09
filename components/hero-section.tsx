@@ -71,7 +71,7 @@ export default function HeroSection() {
               </p>
             </div>            {/* Live Stats Display */}
             <div className="mb-16">
-              <div className="bg-black/70 backdrop-blur-lg border border-red-600/20 rounded-2xl p-8 max-w-4xl mx-auto">
+              <div className="bg-black/70 rounded-2xl p-8 max-w-4xl mx-auto">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl md:text-3xl font-protest text-white mb-4">Join the Movement</h3>
                   <LiveStats />

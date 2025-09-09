@@ -182,7 +182,7 @@ export default function PetitionSection() {
                     <p className="text-gray-300 text-lg mb-8">Sign in with Google to add your signature and protect against spam</p>
                   </div>
                   <Button 
-                    onClick={signInWithGoogle}
+                    onClick={() => signInWithGoogle('petition')}
                     className="bg-red-600 hover:bg-red-700 text-white font-bold text-xl px-10 py-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     <span className="flex items-center gap-3 cursor-pointer">
