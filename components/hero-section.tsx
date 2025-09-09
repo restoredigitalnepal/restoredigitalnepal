@@ -4,12 +4,13 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Users, Globe } from "lucide-react"
 import Image from "next/image"
+import LiveStats from "./live-stats"
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [currentStat, setCurrentStat] = useState(0)
 
-  const stats = [
+  const staticStats = [
     { id: "stat-1", number: "20+", label: "Lives Lost" },
     { id: "stat-2", number: "26", label: "Platforms Banned" },
     { id: "stat-3", number: "30M+", label: "Voices Silenced" },
@@ -18,10 +19,10 @@ export default function HeroSection() {
   useEffect(() => {
     setIsVisible(true)
     const interval = setInterval(() => {
-      setCurrentStat((prev) => (prev + 1) % stats.length)
+      setCurrentStat((prev) => (prev + 1) % staticStats.length)
     }, 4000)
     return () => clearInterval(interval)
-  }, [stats.length])
+  }, [staticStats.length])
 
   const scrollToPetition = () => {
     document.getElementById("petition")?.scrollIntoView({ behavior: "smooth" })
@@ -68,11 +69,17 @@ export default function HeroSection() {
               <p className="text-xl md:text-2xl text-red-300 mb-8 font-medium">
                 They silenced our voices, took our children, but they cannot break our spirit
               </p>
-            </div>            {/* Stats Display - Clean Minimal */}
+            </div>            {/* Live Stats Display */}
             <div className="mb-16">
               <div className="bg-black/70 backdrop-blur-lg border border-red-600/20 rounded-2xl p-8 max-w-4xl mx-auto">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl md:text-3xl font-protest text-white mb-4">Join the Movement</h3>
+                  <LiveStats />
+                </div>
+                
+                {/* Static Stats */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {stats.map((stat, index) => (
+                  {staticStats.map((stat, index) => (
                     <div
                       key={stat.id}
                       className={`text-center transition-all duration-700 ${currentStat === index ? 'scale-110 opacity-100' : 'scale-100 opacity-70'

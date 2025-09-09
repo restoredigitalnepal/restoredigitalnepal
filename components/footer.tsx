@@ -1,4 +1,6 @@
 import Image from "next/image"
+import LiveStats from './live-stats'
+
 export default function Footer() {
   return (
     <footer className="bg-black/95 backdrop-blur-md border-t border-red-600/30 py-12">
@@ -88,16 +90,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-red-600/30 mt-8 pt-8 text-center">
-          <div className="flex flex-col items-center space-y-3 mb-4">
-            <div className="inline-flex items-center justify-center rounded-full bg-black/60 border border-red-400/30 px-3 py-1">
-              <span className="text-white font-protest font-bold mr-2 inline-block text-center min-w-[4ch] tracking-wide">0+</span>
-              <span className="text-red-200 text-xs">people signed the petition</span>
-            </div>
-            <div className="inline-flex items-center justify-center rounded-full bg-black/60 border border-red-400/30 px-3 py-1">
-              <span className="text-white font-protest font-bold mr-2 inline-block text-center min-w-[4ch] tracking-wide">0</span>
-              <span className="text-red-200 text-xs">joined hand to hand</span>
-            </div>
-          </div>
+          <LiveStats />
           <p className="text-gray-400">© 2025 Restore Digital Nepal. Built for the people, by the people.</p>
         </div>
       </div>

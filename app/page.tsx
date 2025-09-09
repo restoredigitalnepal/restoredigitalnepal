@@ -4,6 +4,7 @@ import HashtagTicker from "@/components/hashtag-ticker"
 import MovementStats from "@/components/movement-stats"
 import PetitionSection from "@/components/petition-section"
 import JoinTeamSection from "@/components/join-team-section"
+import CommunitySection from "@/components/community-section"
 import Footer from "@/components/footer"
 
 export default function HomePage() {
@@ -27,6 +28,7 @@ export default function HomePage() {
           <MovementStats />
           <PetitionSection />
           <JoinTeamSection />
+          <CommunitySection />
           <Footer />
         </div>
 
