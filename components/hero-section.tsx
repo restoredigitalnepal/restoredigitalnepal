@@ -10,9 +10,9 @@ export default function HeroSection() {
   const [currentStat, setCurrentStat] = useState(0)
 
   const stats = [
-    { id: "stat-1", number: "26", label: "Platforms Banned" },
-    { id: "stat-2", number: "30M+", label: "Voices Silenced" },
-    { id: "stat-3", number: "100K+", label: "Youth Rising" },
+    { id: "stat-1", number: "20+", label: "Lives Lost" },
+    { id: "stat-2", number: "26", label: "Platforms Banned" },
+    { id: "stat-3", number: "30M+", label: "Voices Silenced" },
   ]
 
   useEffect(() => {
@@ -62,9 +62,12 @@ export default function HeroSection() {
                   #EnoughIsEnough
                 </span>
               </h1>
-              <h2 className="font-protest text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 opacity-90 tracking-wide">
-                Restore Digital Nepal
+              <h2 className="font-protest text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 opacity-90 tracking-wide">
+                Hold Corrupt Leaders Accountable
               </h2>
+              <p className="text-xl md:text-2xl text-red-300 mb-8 font-medium">
+                They silenced our voices, took our children, but they cannot break our spirit
+              </p>
             </div>            {/* Stats Display - Clean Minimal */}
             <div className="mb-16">
               <div className="bg-black/70 backdrop-blur-lg border border-red-600/20 rounded-2xl p-8 max-w-4xl mx-auto">
@@ -87,14 +90,14 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Constitutional Quote - Professional */}
+            {/* Memorial Quote - Emotional */}
             <div className="mb-16 max-w-5xl mx-auto font-protest">
               <div className="bg-black/60 backdrop-blur-sm border-l-4 border-red-500 rounded-r-2xl p-8">
                 <blockquote className="text-2xl md:text-3xl text-white font-semibold mb-4 italic">
-                  "Every citizen shall have the right to <span className="text-red-400 font-bold">freedom of opinion and expression</span>"
+                  "In memory of those who <span className="text-red-400 font-bold">gave their lives</span> for our country Nepal"
                 </blockquote>
                 <cite className="text-red-300 text-xl font-medium">
-                  - Article 17(2)(a), Constitution of Nepal
+                  - Never forget, never forgive the corrupt leaders who took them from us
                 </cite>
               </div>
             </div>
@@ -125,20 +128,23 @@ export default function HeroSection() {
               </Button>
             </div>
 
-            {/* Hashtags - Minimal Design */}
+            {/* Hashtags - Emotional Design */}
             <div className="mb-12">
               <div className="flex flex-wrap justify-center gap-4">
                 <span className="bg-red-600 text-white px-8 py-3 rounded-full font-bold text-lg border-2 border-red-500">
                   #EnoughIsEnough
                 </span>
-                <span className="bg-black/60 text-white px-6 py-4 rounded-full font-semibold border border-white/30 ">
-                  #RestoreDigitalNepal
+                <span className="bg-black/60 text-white px-6 py-4 rounded-full font-semibold border border-white/30">
+                  #JusticeForTheFallen
+                </span>
+                <span className="bg-black/60 text-white px-6 py-4 rounded-full font-semibold border border-white/30">
+                  #CorruptLeadersMustGo
+                </span>
+                <span className="bg-black/60 text-white px-6 py-4 rounded-full font-semibold border border-white/30">
+                  #NeverForget
                 </span>
                 <span className="bg-black/60 text-white px-6 py-4 rounded-full font-semibold border border-white/30">
                   #DigitalRights
-                </span>
-                <span className="bg-black/60 text-white px-6 py-4 rounded-full font-semibold border border-white/30">
-                  #YouthVoice
                 </span>
               </div>
             </div>
